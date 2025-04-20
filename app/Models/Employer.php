@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Employer extends Model
 {
-    /** @use HasFactory<\Database\Factories\EmployerFactory> */
     use HasFactory;
 
     public function user(): BelongsTo
@@ -17,7 +16,7 @@ class Employer extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function job(): HasMany
+    public function jobs(): HasMany
     {
         return $this->hasMany(Job::class);
     }
